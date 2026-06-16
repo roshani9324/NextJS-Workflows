@@ -1,0 +1,25 @@
+name: Deploy next Js App
+
+on:
+  push:
+   branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubantu-lastest
+
+    concurrency:
+      group: deploy
+      cancel-in-progress: true
+
+    steps: 
+      - name: checkout Repository
+        uses: actions/checkout@v6.0.3
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Next.JS App
+        run:  npm run build
+      - name: Deploy App
+        run: echo "Deploying App...."
+        
+  
