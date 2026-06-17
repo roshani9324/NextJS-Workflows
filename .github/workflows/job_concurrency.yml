@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubantu-lastest
+    runs-on: ubuntu-latest
 
     concurrency:
       group: deploy
